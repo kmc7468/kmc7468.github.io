@@ -1,6 +1,5 @@
 ---
 layout: markdown
-permalink: /index
 title: public static
 ---
 
