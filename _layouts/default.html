@@ -1,0 +1,34 @@
+<html>
+<head>
+	<title>{{ page.title }}</title>
+	<link rel="stylesheet" href="{{ site.baseurl }}/css/style.css" />
+</head>
+<body>
+	<div class="wrapper-header">
+		<div class="container">
+			<header class="header">
+				<nav class="title-bar">
+					<a class="title-text" href="{{ site.baseurl }}">{{ site.title }}</a>
+				</nav>
+				<nav class="title-navigation">
+					<a class="nav-item" href="{{ site.baseurl }}">홈</a>
+					
+					<a class="nav-item last" href="{{ site.repository }}">소스 코드</a>
+				</nav>
+			</header>
+		</div>
+	</div>
+
+	<div class="container" id="main">
+		{{ content }}
+	</div>
+
+	<div class="wrapper-footer">
+		<div class="container">
+			<footer class="footer">
+				<p>{{ site.footer_message }}</p>
+			</footer>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+---
+---
+
+@import "variables";
+@import url(https://fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url(https://cdn.rawgit.com/kattergil/NotoSerifKR-Web/76eb9ebf/stylesheet/NotoSerif-Web.css);
+
+html {
+	font-size: 100%;
+}
+body {
+	margin: 0px;
+
+	background-color: $color_mid_aubergine;
+
+	font-size: 16px;
+	font-family: $font_sans;
+}
+
+// header
+.header {
+	border-bottom: 1px solid $color_black;
+}
+.title-bar {
+	display: flex;
+	overflow: hidden;
+
+	padding: 5px;
+	padding-bottom: 7px;
+
+	background: linear-gradient(to bottom, #444444, $color_cool_grey);
+}
+.title-text {
+	flex-shrink: 0;
+	margin-left: 0;
+
+	color: $color_white;
+	text-decoration: none;
+}
+.title-navigation {
+	padding: 2px;
+	padding-left: 10px;
+
+	background-color: $color_warm_grey_30;
+
+	a {
+		padding: 4px;
+
+		color: $color_black;
+		text-decoration: none;
+	}
+	a:hover {
+		background-color: $color_ubuntu_orange;
+	}
+}
+
+// container
+.container#main {
+	padding: 10px;
+
+	background-color: $color_white;
+}
+
+// footer
+.wrapper-footer {
+	float: bottom;
+}
+.footer {
+	padding: 2px;
+	padding-left: 10px;
+	border-top: 1px solid $color_black;
+	border-bottom: 3px solid $color_cool_grey;
+
+	background-color: $color_warm_grey_30;
+
+	p {
+		margin: 0px;
+	}
+}
+
+// public
+a {
+	color: $color_link;
+	text-decoration: none;
+}
+strong {
+	color: $color_bold;
+}
+em {
+	color: $color_italic;
+}
+blockquote {
+	font-family: $font_serif;
+	font-style: italic;
+}
+hr {
+	border-color: $color_warm_grey;
+	border-width: 0.5px;
+}
+h1 {
+	color: $color_header;
+}
+h2 {
+	color: $color_header;
+}
+h3 {
+	color: $color_header;
+}
+h4 {
+	color: $color_header;
+}
+h5 {
+	color: $color_header;
+}
+code {
+	font-family: $font_monospace;
+}
