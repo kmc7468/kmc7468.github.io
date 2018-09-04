@@ -44,7 +44,9 @@ body {
 	background-color: $color_warm_grey_30;
 
 	a {
-		padding: 4px;
+		padding: 2px;
+		padding-left: 4px;
+		padding-right: 4px;
 
 		color: $color_black;
 		text-decoration: none;
