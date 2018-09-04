@@ -1,24 +1,36 @@
 ---
 layout: default
+title: 404
 ---
 
-<style type="text/css" media="screen">
-	.container {
-		margin: 10px auto;
-		max-width: 600px;
+<style>
+	.container#main {
+		padding: 0px;
+		top: 0px;
+		bottom: 0px;
+		left: 0px;
+		right: 0px;
+		position: absolute;
+
+		background-color: blue;
+
+		color: white;
 		text-align: center;
 	}
 	h1 {
-		margin: 30px 0;
-		font-size: 4em;
-		line-height: 1;
-		letter-spacing: -1px;
+		color: #FF0000;
+	}
+	a {
+		color: #FFFF00;
+	}
+	ul {
+		list-style: none;
 	}
 </style>
-
-<div class="container">
+<article>
 	<h1>404</h1>
-
-	<p><strong>Page not found :(</strong></p>
-	<p>The requested page could not be found.</p>
-</div>
+	<p>존재하지 않는 링크입니다. URL을 확인해 보십시오.</p>
+	<ul>
+		<li><a href="{{ site.baseurl }}">홈으로 돌아가기</a></li>
+	</ul>
+</article>

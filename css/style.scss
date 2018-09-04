@@ -102,6 +102,11 @@ hr {
 h1 {
 	color: $color_header;
 }
+h1.page-title {
+	font-size: 30px;
+
+	color: $color_black;
+}
 h2 {
 	color: $color_header;
 }
