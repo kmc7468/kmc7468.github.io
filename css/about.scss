@@ -1,8 +1,16 @@
 ---
 ---
 
+h1.about-title {
+	margin-top: 4px;
+	margin-bottom: 4px;
+
+	font-size: 28px;
+
+	color: #444444;
+}
 .side-bar {
-	width: 120px;
+	width: 110px;
 	float: left;
 
 	padding: 8px 0px;
@@ -21,5 +29,5 @@
 	}
 }
 .content {
-	float: left;
+	margin-left: 138px;
 }
