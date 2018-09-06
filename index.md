@@ -1,5 +1,5 @@
 ---
-layout: markdown
+layout: page
 title: public static
 ---
 

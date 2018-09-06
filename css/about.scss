@@ -1,0 +1,22 @@
+---
+---
+
+.side-bar {
+	width: 120px;
+	float: left;
+
+	padding: 8px 0px;
+	margin-right: 8px;
+	border: 1px solid silver;
+
+	a {
+		padding: 6px 8px 6px 16px;
+		display: block;
+
+		color: #0366D6;
+		text-decoration: none;
+	}
+	a:hover {
+		color: #042A49;
+	}
+}
