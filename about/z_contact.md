@@ -10,8 +10,8 @@ kmc7468@naver.com
 
 ## SNS
 - 카카오톡: kmc7468 (자주 읽지 않습니다.)
-- **텔레그램**: [@kmc7468](https://t.me/kmc7468)
-- 트위터: kmc7468 (자주 읽지 않습니다.)
+- **텔레그램**: [@kmc7468](https://t.me/kmc7468){:target="_blank"}
+- 트위터: [kmc7468](https://twitter.com/kmc7468){:target="_blank"} (자주 읽지 않습니다.)
 
 ## 게임
 - Steam: kmc7468
