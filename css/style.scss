@@ -22,29 +22,29 @@ body {
 	border-bottom: 1px solid $color_black;
 }
 .title-bar {
-	display: flex;
 	overflow: hidden;
 
-	padding: 5px;
-	padding-bottom: 7px;
+	padding-top: 3px;
+	padding-bottom: 6px;
 
 	background: linear-gradient(to bottom, #444444, $color_cool_grey);
+
+	text-align: center;
 }
 .title-text {
-	flex-shrink: 0;
-	margin-left: 5px;
-
 	color: $color_white;
 	text-decoration: none;
+	text-align: center;
 }
 .title-navigation {
-	padding: 2px;
-	padding-left: 10px;
+	padding-left: 0px;
+	padding-right: 0px;
 
 	background-color: $color_warm_grey_30;
 
+	text-align: center;
+
 	a {
-		padding: 2px;
 		padding-left: 4px;
 		padding-right: 4px;
 
@@ -58,7 +58,10 @@ body {
 
 // container
 .container#main {
-	padding: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
 	overflow: hidden;
 
 	background-color: $color_white;
@@ -69,12 +72,12 @@ body {
 	float: bottom;
 }
 .footer {
-	padding: 2px;
-	padding-left: 10px;
 	border-top: 1px solid $color_black;
 	border-bottom: 3px solid $color_cool_grey;
 
 	background-color: $color_warm_grey_30;
+
+	text-align: center;
 
 	p {
 		margin: 0px;
