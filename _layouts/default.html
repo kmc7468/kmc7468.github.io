@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>{{ site.title }}</title>
+	<title>{% if page.title %}{% if page.title != "public static" %}{{ page.title }} | {% endif %}{% endif %}{{ site.title }}</title>
 
 	<link rel="shortcut icon" type="image/x-icon" href="{{ site.baseurl }}/assets/favicon.ico">
 	<link rel="stylesheet" href="{{ site.baseurl }}/css/style.css" />
@@ -15,6 +15,10 @@
 		<nav class="title-bar">
 			<a class="title-logo" href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/assets/favicon.png"></a>
 			<a class="title-text" href="{{ site.baseurl }}/">{{ site.title }}</a>
+			<form class="search-box" method="GET" action="{{ site.baseurl }}/search">
+				<input class="search-input" type="text" name="query">
+				<input class="search-button" type="submit" value="검색">
+			</form>
 		</nav>
 		<nav class="title-navigation">
 			<a href="{{ site.baseurl }}/">홈</a>
