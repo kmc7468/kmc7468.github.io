@@ -12,7 +12,7 @@ layout: default
 		{% if page.subtitle %}
 			{{ page.subtitle }} -
 		{% endif %}
-		{{ page.date | date_to_string: "ordinal", "US" }}
+		{{ page.date | date: "%Y년 %-m월 %-d일" }}
 	</h1>
 	<h1 class="page-category">카테고리: <a href="{{ site.baseurl }}/categories/{{ page.category }}">
 		{% for category in site.categories_korean %}
