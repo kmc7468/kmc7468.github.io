@@ -97,14 +97,21 @@ p {
 	background: linear-gradient(to bottom, #444444, $color_cool_grey);
 
 	text-align: center;
+
+	img {
+		width: 24px;
+		height: 24px;
+		vertical-align: middle;
+	}
+}
+.title-logo:hover {
+	text-decoration: none;
 }
 .title-text {
 	color: $color_white;
 	text-decoration: none;
 	text-align: center;
-}
-.title-text:hover {
-	text-decoration: none;
+	vertical-align: middle;
 }
 .title-navigation {
 	padding-left: 0px;
@@ -165,7 +172,7 @@ p {
 }
 .footer {
 	border-top: 1px solid $color_black;
-	border-bottom: 1px solid $color_black;
+	border-bottom: 3px solid $color_cool_grey;
 
 	background-color: $color_warm_grey_30;
 
