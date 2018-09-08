@@ -1,0 +1,6 @@
+{
+	"title": "{{ page.title }}",
+	"url": "{{ page.url }}",
+	"searchable": {% if page.searchable %}{{ page.searchable }}{% else %}false{% endif %},
+	"is_post": false
+}
