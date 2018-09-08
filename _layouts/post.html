@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<html>
+<head>
+	<link rel="stylesheet" href="{{ site.baseurl }}/css/post.css" />
+</head>
+<body>
+	<article>
+		<h1 class="page-title"><a href="{{ page.url }}">{{ page.title }}</a></h1>
+		<h1 class="page-subtitle">{{ page.subtitle }}</h1>
+		<article class="content">
+			{{ content }}
+		</article>
+	</article>
+
+	{% include comment.html %}
+</body>
+</html>

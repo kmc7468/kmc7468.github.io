@@ -3,21 +3,10 @@ layout: default
 ---
 
 <article>
-	<h1 class="page-title">{{ page.title }}</h1>
+		<h1 class="page-title"><a href="{{ page.url }}">{{ page.title }}</a></h1>
 	<article class="entry">
 		{{ content }}
 	</article>
-	<aside id="disqus_thread"></aside>
 
-	{% if page.comment %}
-		<script>
-			(function() { // DON'T EDIT BELOW THIS LINE
-				var d = document, s = d.createElement('script');
-				s.src = 'https://public-static.disqus.com/embed.js';
-				s.setAttribute('data-timestamp', +new Date());
-				(d.head || d.body).appendChild(s);
-			})();
-		</script>
-		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-	{% endif %}
+	{% include comment.html %}
 </article>
