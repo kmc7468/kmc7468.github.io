@@ -1,0 +1,17 @@
+---
+layout: page
+title: 카테고리
+permalink: /categories/index
+---
+
+<html>
+<body>
+	<ul>
+		{% for category in site.categories_korean %}
+			<li><a href="{{ site.baseurl }}/categories/{{ category.first }}">
+				{{ category.last }}
+			</a></li>
+		{% endfor %}
+	</ul>
+</body>
+</html>

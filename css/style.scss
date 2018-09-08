@@ -75,6 +75,10 @@ h5 {
 code {
 	font-family: $font_monospace;
 }
+ul, ol {
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
 
 // header
 .header {

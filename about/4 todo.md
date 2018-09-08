@@ -3,7 +3,6 @@ layout: about
 title: About
 subtitle: TODO
 permalink: /about/todo
-comment: false
 ---
 
 ## 프로젝트
