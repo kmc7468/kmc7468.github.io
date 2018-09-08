@@ -1,0 +1,48 @@
+---
+layout: page
+title: 태그
+permalink: /tags
+---
+
+<html>
+<head>
+	<link rel="stylesheet" href="{{ site.baseurl }}/css/tags.css" />
+</head>
+<body>
+	<ul class="tags">
+		{% for tag in site.tags %}
+			<a class="tag" style="font-size: {% assign temp = tag.last.size | times: 100 | divided_by: site.tags.size | divided_by: 2 %}{% if temp <= 16 %}16{% else %}{% if temp >= 32 %}32{% else %}{{ temp }}{% endif %}{% endif %}" href="#{{ tag[0] }}">{{ tag[0] }}</a>
+		{% endfor %}
+	</ul>
+	<div class="tags-posts">
+		{% for tag in site.tags %}
+			<hr>
+			<h2 id="{{ tag[0] }}">{{ tag[0] }}</h2>
+			<ul>
+				{% for page in tag[1] %}
+				<li>
+					<a href="{{ page.url }}">{{ page.title }}</a>
+					({{ page.date | date: "%Y년 %-m월 %-d일" }}) - 카테고리:
+					{% for category in site.categories_korean %}
+						{% capture category_first %}
+							{{ category | first }}
+						{% endcapture %}
+						{% capture page_category %}
+							{{ page.category }}
+						{% endcapture %}
+
+						{% if category_first == page_category %}
+							<a href="{{ site.baseurl }}/categories/{{ category_first }}">{{ category | last }}</a>
+							{% break %}
+						{% endif %}
+					{% endfor %}
+				</li>
+				{% endfor %}
+			</ul>
+		{% endfor %}
+		{% if site.tags.size == 0 %}
+			<p>등록된 태그가 없습니다.</p>
+		{% endif %}
+	</div>
+</body>
+</html>

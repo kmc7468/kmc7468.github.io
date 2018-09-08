@@ -28,6 +28,11 @@ layout: default
 			{% endif %}
 		{% endfor %}
 	</a></h1>
+	{% if page.tag %}
+		<h1 class="page-tag">태그:
+			{% assign i = 0 %}{% for tag in page.tag %}{% if i != 0 %}, {% endif %}{% assign i = i | plus: 1 %}<a href="{{ site.baseurl }}/tags#{{ tag }}">{{ tag }}</a>{% endfor %}
+		</h1>
+	{% endif %}
 	<article class="content">
 		{{ content }}
 	</article>
