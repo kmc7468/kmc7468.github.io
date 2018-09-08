@@ -16,9 +16,7 @@
 title: "public static"
 email: "kmc7468@naver.com"
 description: >- # this means to ignore newlines until "baseurl:"
-    Write an awesome description for your new site here. You can edit this
-    line in _config.yml. It will appear in your document head meta (for
-    Google search results) and in your feed.xml site description.
+    프로그래밍, 특히 C++와 관련된 게시물을 자주 업로드 하는 한 학생의 블로그입니다.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://kmc7468.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
