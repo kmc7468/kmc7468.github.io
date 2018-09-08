@@ -141,11 +141,19 @@ p {
 }
 
 // container
+.container-wrapper {
+	margin: 0px;
+	padding: 0px;
+
+	background-color: #E8E6E4;
+}
 .container#main {
+	margin-left: 0px;
+	margin-right: 0px;
 	padding-top: 5px;
 	padding-bottom: 5px;
-	padding-left: 10px;
-	padding-right: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
 	overflow: hidden;
 
 	background-color: $color_white;
@@ -157,7 +165,7 @@ p {
 }
 .footer {
 	border-top: 1px solid $color_black;
-	border-bottom: 3px solid $color_cool_grey;
+	border-bottom: 1px solid $color_black;
 
 	background-color: $color_warm_grey_30;
 
