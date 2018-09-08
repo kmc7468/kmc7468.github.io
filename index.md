@@ -13,3 +13,5 @@ title: public static
 ## 외부 저작물
 - 우분투 스킨: [리](https://github.com/Lee0701){:target="_blank"}, kmc7468 제작
 - 사이트 파비콘: <a target="_blank" rel="noopener noreferrer" href="http://www.freepik.com" title="Freepik">Freepik</a> 제작(<a target="_blank" rel="noopener noreferrer" href="https://www.flaticon.com/">Flaticon</a>에서 <a target="_blank" rel="noopener noreferrer" href="http://creativecommons.org/licenses/by/3.0/">CC 3.0 BY</a>로 배포됨)
+
+{% include related_posts.html %}
