@@ -2,6 +2,7 @@
 layout: about
 title: About
 subtitle: 프로필
+permalink: /about/index
 comment: false
 ---
 
