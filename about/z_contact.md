@@ -3,6 +3,7 @@ layout: about
 title: About
 subtitle: 연락처
 permalink: /about/contact
+comment: false
 ---
 
 ## 이메일

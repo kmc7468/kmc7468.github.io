@@ -1,6 +1,7 @@
 ---
 layout: page
 title: public static
+comment: false
 ---
 
 **public static**은 kmc7468이 운영하는 블로그입니다.

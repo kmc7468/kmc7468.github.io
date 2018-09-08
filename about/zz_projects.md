@@ -3,6 +3,7 @@ layout: about
 title: About
 subtitle: 프로젝트
 permalink: /about/projects
+comment: false
 ---
 
 ## 오픈소스
