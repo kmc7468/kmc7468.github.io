@@ -53,6 +53,20 @@ body {
 		background-color: $color_ubuntu_orange;
 	}
 }
+.notice-bar {
+	padding-left: 0px;
+	padding-right: 0px;
+
+	background-color: $color_warm_grey_30;
+
+	color: $color_black;
+	text-align: center;
+
+	p {
+		margin-top: 0px;
+		margin-bottom: 0px;
+	}
+}
 
 // container
 .container#main {
