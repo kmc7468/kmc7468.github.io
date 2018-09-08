@@ -10,9 +10,9 @@
 		{% for post in site.posts %}
 			{% if page.category %}
 				{% if page.category == post.category %}
-					<li><a href="{{ post.url }}">{{ post.title }}</a> ({{ post.date | date: "%Y년 %-m월 %-d일" }}) - 태그: {% assign i = 0 %}{% for tag in post.tag %}{% if i != 0 %}, {% endif %}{% assign i = i | plus: 1 %}<a href="{{ site.baseurl }}/tags#{{ tag }}">{{ tag }}</a>{% endfor %}</li>
+					<li><a href="{{ post.url }}">{{ post.title }}</a> ({{ post.date | date: "%Y년 %-m월 %-d일" }}){% if post.tag %} - 태그: {% assign i = 0 %}{% for tag in post.tag %}{% if i != 0 %}, {% endif %}{% assign i = i | plus: 1 %}<a href="{{ site.baseurl }}/tags#{{ tag }}">{{ tag }}</a>{% endfor %}</li>
 					{% assign i = i | plus: 1 %}
-				{% endif %}
+				{% endif %}{% endif %}
 			{% else %}
 				<li><a href="{{ post.url }}">{{ post.title }}</a> ({{ post.date | date: "%Y년 %-m월 %-d일" }}) - 카테고리:
 					{% for category in site.categories_korean %}
@@ -24,11 +24,12 @@
 						{% endcapture %}
 
 						{% if category_first == post_category %}
-							<a href="{{ site.baseurl }}/categories/{{ category_first }}">{{ category | last }}</a>;
+							<a href="{{ site.baseurl }}/categories/{{ category_first }}">{{ category | last }}</a>{% if post.tag %};{% endif %}
 							{% break %}
 						{% endif %}
-					{% endfor %}태그:
+					{% endfor %}{% if post.tag %}태그:
 					{% assign i = 0 %}{% for tag in post.tag %}{% if i != 0 %}, {% endif %}{% assign i = i | plus: 1 %}<a href="{{ site.baseurl }}/tags#{{ tag }}">{{ tag }}</a>{% endfor %}
+					{% endif %}
 				</li>
 				{% assign i = i | plus: 1 %}
 			{% endif %}
