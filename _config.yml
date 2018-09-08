@@ -25,6 +25,7 @@ url: "https://kmc7468.github.io" # the base hostname & protocol for your site, e
 repository: "https://github.com/kmc7468/kmc7468.github.io"
 footer_message: "(C) 2018. kmc7468 All rights reserved."
 categories_korean:
+    all: "전체"
     notice: "공지사항"
 
 # Build settings
