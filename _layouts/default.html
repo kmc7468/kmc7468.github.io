@@ -11,35 +11,26 @@
 	<meta data-n-head="true" content="width=device-width,initial-scale=1" name="viewport">
 </head>
 <body>
-	<div class="wrapper-header">
-		<div class="container">
-			<header class="header">
-				<nav class="title-bar">
-					<a class="title-text" href="{{ site.baseurl }}/">{{ site.title }}</a>
-				</nav>
-				<nav class="title-navigation">
-					<a class="nav-item" href="{{ site.baseurl }}/">홈</a>
-					<a class="nav-item" href="{{ site.baseurl }}/about">About</a>
-					<a class="nav-item" href="{{ site.baseurl }}/cppground">C++마당</a>
+	<header class="header">
+		<nav class="title-bar">
+			<a class="title-text" href="{{ site.baseurl }}/">{{ site.title }}</a>
+		</nav>
+		<nav class="title-navigation">
+			<a href="{{ site.baseurl }}/">홈</a>
+			<a href="{{ site.baseurl }}/about">About</a>
+			<a href="{{ site.baseurl }}/cppground">C++마당</a>
+			<a target="_blank" rel="noopener noreferrer" href="{{ site.repository }}">소스 코드</a>
+		</nav>
+		<nav class="notice-bar" id="notice-bar"></nav>
+	</header>
 
-					<a class="nav-item last" target="_blank" rel="noopener noreferrer" href="{{ site.repository }}">소스 코드</a>
-				</nav>
-				<div class="notice-bar" id="notice-bar"></div>
-			</header>
-		</div>
-	</div>
-
-	<div class="container" id="main">
+	<article class="container" id="main">
 		{{ content }}
-	</div>
+	</article>
 
-	<div class="wrapper-footer">
-		<div class="container">
-			<footer class="footer">
-				<p>{{ site.footer_message }}</p>
-			</footer>
-		</div>
-	</div>
+	<footer class="footer">
+		<p>{{ site.footer_message }}</p>
+	</footer>
 
 	<script src="{{ site.baseurl }}/js/default.js"></script>
 </body>
