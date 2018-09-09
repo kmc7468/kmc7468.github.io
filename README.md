@@ -3,6 +3,7 @@
 ## 참조한 곳
 - 스킨은 [리](https://github.com/Lee0701)님이 개발하신 우분투 스킨을 개선하여 사용하고 있습니다.
 - [kminito.github.io](https://github.com/kminito/kminito.github.io) 및 [hyesun03.github.io](https://github.com/hyesun03/hyesun03.github.io)에서 각각 About, 태그와 관련된 HTML을 참조하였습니다.
+- [이곳](https://gist.github.com/ilazakis/550767c780cc5a6d625e)에서 bigfoot의 개선 버전을 다운로드 받았습니다.
 ## 라이선스
 게시글을 제외한 모든 소스 코드는 MIT 라이선스가 적용됩니다.
 ```

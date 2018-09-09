@@ -6,4 +6,9 @@ window.onload = function() {
 		notice.innerHTML = "Internet Explorer는 지원하지 않는 브라우저입니다. Chrome 등의 다른 브라우저를 이용해 주십시오.";
 		notice_bar.appendChild(notice);
 	}
+
+	var footnotes = document.getElementsByClassName("footnotes");
+	var footnotes_title = document.createElement("h2");
+	footnotes_title.innerHTML = "각주";
+	footnotes[0].prepend(footnotes_title);
 }

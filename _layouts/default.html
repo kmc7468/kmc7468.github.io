@@ -5,6 +5,7 @@
 	<link rel="shortcut icon" type="image/x-icon" href="{{ site.baseurl }}/assets/favicon.ico">
 	<link rel="stylesheet" href="{{ site.baseurl }}/css/default.css" />
 	<link rel="stylesheet" href="{{ site.baseurl }}/css/default_desktop.css" />
+	<link rel="stylesheet" href="{{ site.baseurl }}/css/bigfoot-default.css" />
 
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR|Noto+Serif+KR" rel="stylesheet">
 
@@ -44,5 +45,17 @@
 	</footer>
 
 	<script src="{{ site.baseurl }}/js/default.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="{{ site.baseurl }}/js/bigfoot.min.js"></script>
+	<script type="text/javascript">
+		$.bigfoot(
+			{
+				actionOriginalFN: "ignore",
+				positionContent: "true",
+				activateOnHover: "true",
+				deleteOnUnhover: "true"
+			}
+		);
+	</script>
 </body>
 </html>
