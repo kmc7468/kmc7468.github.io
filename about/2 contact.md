@@ -2,7 +2,9 @@
 layout: about
 title: About
 subtitle: 연락처
+search_title: "About: 연락처"
 permalink: /about/contact
+searchable: true
 ---
 
 ## 이메일

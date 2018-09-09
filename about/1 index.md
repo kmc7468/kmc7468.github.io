@@ -2,7 +2,9 @@
 layout: about
 title: About
 subtitle: 프로필
+search_title: "About: 프로필"
 permalink: /about/index
+searchable: true
 ---
 
 안녕하세요, static(kmc7468)입니다. 저는 프로그래밍에 관심이 많은 학생입니다. 현재는 C++를 중심적으로 다루고 있습니다.

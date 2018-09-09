@@ -2,7 +2,9 @@
 layout: about
 title: About
 subtitle: 프로젝트
+search_title: "About: 프로젝트"
 permalink: /about/projects
+searchable: true
 ---
 
 ## 오픈소스

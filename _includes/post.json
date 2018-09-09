@@ -1,29 +1,5 @@
-{
-	"title": "{{ post.title | replace: " ", "" }}",
-	"title_original": "{{ post.title }}",
-	"url": "{{ post.url }}",
-	"category": "{{ post.category }}",
-	"category_korean":
-	{% for category in site.categories_korean %}
-		{% capture category_first %}
-			{{ category | first }}
-		{% endcapture %}
-		{% capture post_category %}
-			{{ post.category }}
-		{% endcapture %}
-
-		{% if category_first == post_category %}
-			"{{ category | last }}"
-			{% break %}
-		{% endif %}
-	{% endfor %},
-	"tag": [
-	{% for tag in post.tag %}
-		"{{ tag }}",
-	{% endfor %}
-		null
-	],
-	"searchable": {% if post.searchable %}{{ post.searchable }}{% else %}true{% endif %},
-	"is_post": true,
-	"date": "{{ post.date | date: \"%Y년 %-m월 %-d일\" }}"
-}
+{% if post.searchable != null and post.searchable %}
+	{% include post_original.json %}
+{% elsif post.searchable == null %}
+	{% include post_original.json %}
+{% endif %}

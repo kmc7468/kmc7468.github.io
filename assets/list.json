@@ -3,10 +3,10 @@
 
 [
 	{% for page in site.pages %}
-		{% if page.title %}{% include page.json %},{% endif %}
+		{% include page.json %}
 	{% endfor %}
 	{% for post in site.posts %}
-		{% if post.title %}{% include post.json %},{% endif %}
+		{% include post.json %}
 	{% endfor %}
 	null
 ]

@@ -1,7 +1,8 @@
+{% if page.searchable != null and page.searchable %}
 {
-	"title": "{{ page.title | replace: " ", "" }}",
-	"title_original": "{{ page.title }}",
+	"title": "{% if page.search_title %}{{ page.search_title | replace: " ", "" }}{% else %}{{ page.title | replace: " ", "" }}{% endif %}",
+	"title_original": "{% if page.search_title %}{{ page.search_title }}{% else %}{{ page.title }}{% endif %}",
 	"url": "{{ page.url }}",
-	"searchable": {% if page.searchable %}{{ page.searchable }}{% else %}false{% endif %},
 	"is_post": false
-}
+},
+{% endif %}

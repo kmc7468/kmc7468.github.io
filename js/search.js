@@ -46,7 +46,7 @@ function filterPages(pages, filters) {
 		for (var j in filters) {
 			var filter = filters[j];
 			if (page.title.includes(filter) || page.url.includes(filter)) {
-				if (!result.includes(page) && page.searchable) {
+				if (!result.includes(page)) {
 					result.push(page);
 				}
 			}
