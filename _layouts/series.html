@@ -25,7 +25,7 @@ layout: page
 				{% assign prev_page_index = page.series_index | minus: 1 %}
 				{% for post in site.pages %}
 					{% if post.layout == "series" and post.series == page.series and post.series_index == prev_page_index %}
-						<a class="prev-post" href="{{ post.url }}">&lt; 이전 포스트</a>
+						<strong><a class="prev-post" href="{{ post.url }}">&lt; 이전 포스트</a></strong>
 						{% break %}
 					{% endif %}
 				{% endfor %}
@@ -33,7 +33,7 @@ layout: page
 			{% assign next_page_index = page.series_index | plus: 1 %}
 			{% for post in site.pages %}
 				{% if post.layout == "series" and post.series == page.series and post.series_index == next_page_index %}
-					<a class="next-post" href="{{ post.url }}">다음 포스트 &gt;</a>
+					<strong><a class="next-post" href="{{ post.url }}">다음 포스트 &gt;</a></strong>
 					{% break %}
 				{% endif %}
 			{% endfor %}
