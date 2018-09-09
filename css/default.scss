@@ -134,6 +134,8 @@ p {
 		max-width: calc(100% - 20px - 40px - 5px);
 		
 		background-color: $color_warm_grey;
+
+		font-family: $font_sans;
 	}
 	.search-button {
 		margin: 0px;
@@ -146,6 +148,8 @@ p {
 		vertical-align: middle;
 
 		background-color: $color_warm_grey;
+
+		font-family: $font_sans;
 	}
 	.search-button:hover {
 		background-color: $color_warm_grey_30;
