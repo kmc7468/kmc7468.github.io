@@ -11,3 +11,13 @@ h1.series-title {
 
 	color: #444444;
 }
+.remote-bar {
+	.prev-post {
+		float: left;
+		white-space: nowrap;
+	}
+	.next-post {
+		float: right;
+		white-space: nowrap;
+	}
+}
