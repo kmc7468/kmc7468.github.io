@@ -1,5 +1,6 @@
 {
-	"title": "{{ post.title }}",
+	"title": "{{ post.title | replace: " ", "" }}",
+	"title_original": "{{ post.title }}",
 	"url": "{{ post.url }}",
 	"category": "{{ post.category }}",
 	"category_korean":

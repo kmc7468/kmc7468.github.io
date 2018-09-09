@@ -1,5 +1,6 @@
 {
-	"title": "{{ page.title }}",
+	"title": "{{ page.title | replace: " ", "" }}",
+	"title_original": "{{ page.title }}",
 	"url": "{{ page.url }}",
 	"searchable": {% if page.searchable %}{{ page.searchable }}{% else %}false{% endif %},
 	"is_post": false

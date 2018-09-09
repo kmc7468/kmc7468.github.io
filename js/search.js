@@ -8,12 +8,18 @@ function unicodeUnEscape(string) {
 }
 
 function getParam(param) {
-	var result = new RegExp("[\?&]" + param + "=([^&#]*)").exec(window.location.href);
-	if (result == null) {
-		return null;
-	} else {
-		return unicodeUnEscape(decodeURI(result[1]));
+	var queryString = window.location.search.substring(1);
+	queryString = unicodeUnEscape(decodeURIComponent(queryString.replace(/\+/g, "%20")));
+	var queries = queryString.split('&');
+	
+	for (var i in queries) {
+		var pair = queries[i].split('=');
+		if (pair[0] == param) {
+			return pair[1];
+		}
 	}
+
+	return null;
 }
 
 function getText(path, process) {
@@ -64,7 +70,7 @@ function layoutResultsPage(query, pages) {
 		var page = pages[i];
 
 		var li = document.createElement("li");
-		li.innerHTML = '<a href="' + page.url + '">' + page.title + '</a>';
+		li.innerHTML = '<a href="' + page.url + '">' + page.title_original + '</a>';
 
 		if (page.is_post) {
 			li.innerHTML +=
@@ -92,7 +98,8 @@ function layoutResultsPage(query, pages) {
 
 window.addEventListener("load", function() {
 	var filters = [];
-	var query = getParam("query");
+	var query_original = getParam("query");
+	var query = query_original.trim().replace(' ', '');
 	if (query == null || query == "") {
 		noResultsPage("");
 		return;
@@ -103,9 +110,9 @@ window.addEventListener("load", function() {
 		var data = JSON.parse(data);
 		var pages = filterPages(data, filters);
 		if (pages.length == 0) {
-			noResultsPage(query);
+			noResultsPage(query_original);
 		} else {
-			layoutResultsPage(query, pages);
+			layoutResultsPage(query_original, pages);
 		}
 	});
 });
