@@ -81,7 +81,7 @@ ul, ol {
 }
 p {
 	margin-top: 4px;
-	margin-bottom: 4px;
+	margin-bottom: 16px;
 }
 
 // header
@@ -134,6 +134,7 @@ p {
 		max-width: calc(100% - 20px - 40px - 5px);
 		
 		background-color: $color_warm_grey;
+		transition: width 0.5s;
 
 		font-family: $font_sans;
 	}
@@ -170,6 +171,7 @@ p {
 
 		color: $color_black;
 		text-decoration: none;
+		white-space: nowrap;
 	}
 	a:hover {
 		background-color: $color_ubuntu_orange;
