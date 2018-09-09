@@ -1,0 +1,32 @@
+.side-bar {
+	padding: 8px 0px;
+	border: 1px solid silver;
+
+	a {
+		padding: 6px 8px 6px 16px;
+		display: block;
+
+		color: #0366D6;
+		text-decoration: none;
+	}
+	a:hover {
+		color: #042A49;
+	}
+}
+.side-bar#series {
+	li {
+		word-break: keep-all;
+	}
+}
+
+@media(min-width: 600px) {
+	.side-bar {
+		width: 110px;
+		float: left;
+
+		margin-right: 16px;
+	}
+	.side-bar#series {
+		width: 180px;
+	}
+}

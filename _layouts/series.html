@@ -1,0 +1,24 @@
+---
+layout: page
+---
+
+<html>
+<head>
+	<link rel="stylesheet" href="{{ site.baseurl }}/css/series.css" />
+</head>
+<body>
+	<aside class="side-bar" id="series">
+		<ol>
+			{% for post in site.pages %}
+				{% if post.layout == "series" and post.series == page.series %}
+					<li><a href="{{ post.url }}">{{ post.subtitle }}</a></li>
+				{% endif %}
+			{% endfor %}
+		</ol>
+	</aside>
+	<h1 class="series-title">{{ page.subtitle }}</h1>
+	<article class="content" id="content-series">
+		{{ content }}
+	</article>
+</body>
+</html>
