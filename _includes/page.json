@@ -6,8 +6,13 @@
 	"is_post": false,
 	"is_series": {% if page.layout == "series" %}true,{% else %}false{% endif %}
 	{% if page.layout == "series" %}
-	"series": "{{ page.series }}",
-	"series_url": "{% for post in site.pages %}{% if post.layout == "series_content" and post.series == page.series %}{{ post.url }}{% break %}{% endif %}{% endfor %}"
+		"series": "{{ page.series }}",
+		"series_url": "{% for post in site.pages %}{% if post.layout == "series_content" and post.series == page.series %}{{ post.url }}{% break %}{% endif %}{% endfor %}",
+		"series_has_subtitle": {% if page.subtitle != null %}true,{% else %}false{% endif %}
+		{% if page.subtitle != null %}
+			"series_subtitle": "{{ page.subtitle | replace: " ", "" | replace: ":", "" }}",
+			"series_subtitle_original": "{{ page.subtitle }}"
+		{% endif %}
 	{% endif %}
 },
 {% endif %}

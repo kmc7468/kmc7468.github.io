@@ -45,10 +45,17 @@ function filterPages(pages, filters) {
 		var page = pages[i];
 		for (var j in filters) {
 			var filter = filters[j];
+			var cur_page = null;
+
 			if (page.title.includes(filter)) {
-				if (!result.includes(page)) {
-					result.push(page);
-				}
+				cur_page = page;
+			} else if (page.series && page.series_has_subtitle &&
+					   page.series_subtitle.includes(filter)) {
+				cur_page = page;
+			}
+
+			if (cur_page != null && !result.includes(cur_page)) {
+				result.push(cur_page);
 			}
 		}
 	}
@@ -91,6 +98,9 @@ function layoutResultsPage(query, pages) {
 				}
 			}
 		} else if (page.is_series) {
+			if (page.series_has_subtitle) {
+				li.innerHTML += "(" + page.series_subtitle_original + ")";
+			}
 			li.innerHTML +=
 			' - 시리즈: <a href="' + page.series_url + '">' + page.series + '</a>';
 		}
