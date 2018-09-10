@@ -9,9 +9,19 @@ layout: page
 </head>
 <body>
 	<aside class="side-bar" id="series">
+		{% for post in site.pages %}
+			{% if post.layout == "series_content" and post.series == page.series %}
+				<ul><li><a href="{{ post.url }}">목차</a></li></ul>
+				{% break %}
+			{% endif %}
+		{% endfor %}
 		<ol>
 			{% for post in site.pages %}
 				{% if post.layout == "series" and post.series == page.series %}
+					{% if post.group != null and post.group != prev_group %}
+						{% assign prev_group = post.group %}
+						<p class="series-group"><strong>{{ prev_group }}</strong></p>
+					{% endif %}
 					<li><a href="{{ post.url }}">{{ post.subtitle }}</a></li>
 				{% endif %}
 			{% endfor %}

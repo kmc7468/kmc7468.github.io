@@ -3,12 +3,20 @@ layout: page
 ---
 
 <html>
+<head>
+	<link rel="stylesheet" href="{{ site.baseurl }}/css/series.css" />
+</head>
 <body>
 	{{ content }}
 	<h2>포스트 목록</h2>
 	<ol class="posts">
+		{% assign prev_group = null %}
 		{% for post in site.pages %}
 			{% if post.layout == "series" and post.series == page.series %}
+				{% if post.group != null and post.group != prev_group %}
+					{% assign prev_group = post.group %}
+					<p class="series-group"><strong>{{ prev_group }}</strong></p>
+				{% endif %}
 				<li><a href="{{ post.url }}">{{ post.subtitle }}</a></li>
 			{% endif %}
 		{% endfor %}
