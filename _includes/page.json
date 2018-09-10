@@ -1,8 +1,13 @@
 {% if page.searchable != null and page.searchable %}
 {
-	"title": "{% if page.search_title %}{{ page.search_title | replace: " ", "" }}{% else %}{{ page.title | replace: " ", "" }}{% endif %}",
+	"title": "{% if page.search_title %}{{ page.search_title | replace: " ", "" | replace: ":", "" }}{% else %}{{ page.title | replace: " ", "" | replace: ":", "" }}{% endif %}",
 	"title_original": "{% if page.search_title %}{{ page.search_title }}{% else %}{{ page.title }}{% endif %}",
 	"url": "{{ page.url }}",
-	"is_post": false
+	"is_post": false,
+	"is_series": {% if page.layout == "series" %}true,{% else %}false{% endif %}
+	{% if page.layout == "series" %}
+	"series": "{{ page.series }}",
+	"series_url": "{% for post in site.pages %}{% if post.layout == "series_content" and post.series == page.series %}{{ post.url }}{% break %}{% endif %}{% endfor %}"
+	{% endif %}
 },
 {% endif %}

@@ -90,21 +90,31 @@ function layoutResultsPage(query, pages) {
 					++j;
 				}
 			}
+		} else if (page.is_series) {
+			li.innerHTML +=
+			' - 시리즈: <a href="' + page.series_url + '">' + page.series + '</a>';
 		}
 
 		container.appendChild(li);
 	}
 }
 
+function replaceAll(str, from, to) {
+	return str.split(from).join(to);
+}
+
 window.addEventListener("load", function() {
 	var filters = [];
 	var query_original = getParam("query");
-	var query = query_original.trim().replace(' ', '');
+	var query = query_original.trim();
 	if (query == null || query == "") {
 		noResultsPage("");
 		return;
 	}
-	filters.push(query);
+	var query_splited = query.split(" ");
+	for (var i in query_splited) {
+		filters.push(query_splited[i]);
+	}
 
 	getText("{{ site.baseurl }}/assets/list.json", function(data) {
 		var data = JSON.parse(data);

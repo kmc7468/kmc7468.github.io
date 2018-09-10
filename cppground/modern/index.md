@@ -2,7 +2,7 @@
 layout: series_content
 title: "차근차근 모던 C++ 프로그래밍: 목차"
 series: 차근차근 모던 C++ 프로그래밍
-category: C++
+category: C++마당
 searchable: true
 ---
 

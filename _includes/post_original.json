@@ -1,5 +1,5 @@
 {
-	"title": "{% if post.search_title %}{{ post.search_title | replace: " ", "" }}{% else %}{{ post.title | replace: " ", "" }}{% endif %}",
+	"title": "{% if post.search_title %}{{ post.search_title | replace: " ", "" | replace: ":", "" }}{% else %}{{ post.title | replace: " ", "" | replace: ":", "" }}{% endif %}",
 	"title_original": "{% if post.search_title %}{{ post.search_title }}{% else %}{{ post.title }}{% endif %}",
 	"url": "{{ post.url }}",
 	"category": "{{ post.category }}",

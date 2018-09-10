@@ -11,7 +11,7 @@ permalink: /cppground/index
 	<h2>시리즈 목록</h2>
 	<ul>
 		{% for page in site.pages %}
-			{% if page.layout == "series_content" and page.category == "C++" %}
+			{% if page.layout == "series_content" and page.category == "C++마당" %}
 				<li><a href="{{ page.url }}">{{ page.series }}</a></li>
 			{% endif %}
 		{% endfor %}
