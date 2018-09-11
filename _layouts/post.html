@@ -5,9 +5,15 @@ layout: default
 <html>
 <head>
 	<link rel="stylesheet" href="{{ site.baseurl }}/css/post.css" />
+	<link rel="stylesheet" href="{{ site.baseurl }}/css/series.css" />
+	<link rel="stylesheet" href="{{ site.baseurl }}/css/series_desktop.css" />
 </head>
 <body>
 	<h1 class="page-title"><a href="{{ page.url }}">{{ page.title }}</a></h1>
+	{% assign target = site.categories[page.category] %}
+	{% if page.layout != "series_content_post" %}
+		{% include series_content.html %}
+	{% endif %}
 	<h1 class="page-subtitle">
 		{% if page.subtitle %}
 			{{ page.subtitle }} -
@@ -33,11 +39,15 @@ layout: default
 			{% assign i = 0 %}{% for tag in page.tag %}{% if i != 0 %}, {% endif %}{% assign i = i | plus: 1 %}<a href="{{ site.baseurl }}/tags#{{ tag }}">{{ tag }}</a>{% endfor %}
 		</h1>
 	{% endif %}
-	<article class="content">
+	<article class="content{% if page.series != null and page.layout != "series_content_post" %}-series{% endif %}">
 		{{ content }}
 	</article>
+	{% if page.layout != "series_content_post" and page.layout != "series_content_post" %}
+		{% include series_remote_bar.html %}
+	{% endif %}
 
 	{% include comment.html %}
+	<hr>
 	{% include related_posts.html %}
 </body>
 </html>

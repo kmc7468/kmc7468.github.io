@@ -2,9 +2,32 @@
 layout: default
 ---
 
-<article class="content">
-	<h1 class="page-title"><a href="{{ page.url }}">{{ page.title }}</a></h1>
-	{{ content }}
-</article>
+<html>
+<head>
+	<link rel="stylesheet" href="{{ site.baseurl }}/css/series.css" />
+	<link rel="stylesheet" href="{{ site.baseurl }}/css/series_desktop.css" />
+</head>
+<body>
+	<article class="content">
+		<h1 class="page-title"><a href="{{ page.url }}">{{ page.title }}</a></h1>
 
-{% include comment.html %}
+		{% assign target = site.pages %}
+		{% if page.layout != "series_content" %}
+			{% include series_content.html %}
+		{% endif %}
+		{% if page.series != null and page.layout != "series_content" %}
+			<div class="content-series">
+				<h1 class="series-title">{{ page.subtitle }}</h1>
+		{% endif %}
+				{{ content }}
+		{% if page.series != null %}
+			</div>
+		{% endif %}
+		{% if page.layout != "series_content" %}
+			{% include series_remote_bar.html %}
+		{% endif %}
+	</article>
+
+	{% include comment.html %}
+</body>
+</html>

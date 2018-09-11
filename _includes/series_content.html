@@ -1,0 +1,12 @@
+{% if page.series != null %}
+	<aside class="side-bar" id="series">
+		{% for post in target %}
+			{% if (post.layout == "series_content" or post.layout == "series_content_post") and post.series == page.series %}
+				<a href="{{ post.url }}">목차</a>
+				{% break %}
+			{% endif %}
+		{% endfor %}
+
+		{% include series_content_original.html %}
+	</aside>
+{% endif %}

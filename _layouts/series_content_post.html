@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 ---
 
 <html>
@@ -7,7 +7,7 @@ layout: page
 	{{ content }}
 
 	<h2>포스트 목록</h2>
-	{% assign target = site.pages %}
+	{% assign target = site.categories[page.category] %}
 	{% include series_content_original.html %}
 </body>
 </html>
