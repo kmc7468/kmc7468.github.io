@@ -25,6 +25,8 @@ footer_message: "(C) 2018. kmc7468 All rights reserved."
 categories_korean:
     all: "전체"
     notice: "공지사항"
+subsites_korean:
+    cppground: "C++마당"
 
 # Build settings
 markdown: kramdown

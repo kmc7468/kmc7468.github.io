@@ -1,0 +1,52 @@
+---
+layout: page
+title: 시리즈
+permalink: /series
+---
+
+<html>
+<body>
+	<ul>
+		{% for post in site.pages %}
+			{% if post.layout == "series_content" %}
+				<li><a href="{{ post.url }}">{{ post.series }}</a> - 상위 페이지:
+					{% for category in site.subsites_korean %}
+						{% capture category_first %}
+							{{ category | first }}
+						{% endcapture %}
+						{% capture post_category %}
+							{{ post.category }}
+						{% endcapture %}
+
+						{% if category_first == post_category %}
+							<a href="{{ site.baseurl }}/{{ category_first }}">{{ category | last }}</a>
+							{% break %}
+						{% endif %}
+					{% endfor %}
+				</li>
+			{% endif %}
+		{% endfor %}
+		{% for post in site.posts %}
+			{% if post.layout == "series_content_post" %}
+				<li><a href="{{ post.url }}">{{ post.series }}</a> - 카테고리:
+					{% for category in site.categories_korean %}
+						{% capture category_first %}
+							{{ category | first }}
+						{% endcapture %}
+						{% capture post_category %}
+							{{ post.category }}
+						{% endcapture %}
+
+						{% if category_first == post_category %}
+							<a href="{{ site.baseurl }}/categories/{{ category_first }}">{{ category | last }}</a>{% if post.tag %};{% endif %}
+							{% break %}
+						{% endif %}
+					{% endfor %}{% if post.tag %}태그:
+					{% assign i = 0 %}{% for tag in post.tag %}{% if i != 0 %}, {% endif %}{% assign i = i | plus: 1 %}<a href="{{ site.baseurl }}/tags#{{ tag }}">{{ tag }}</a>{% endfor %}
+					{% endif %}
+				</li>
+			{% endif %}
+		{% endfor %}
+	</ul>
+</body>
+</html>
