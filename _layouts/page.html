@@ -20,11 +20,11 @@ layout: default
 				<h1 class="series-title">{{ page.subtitle }}</h1>
 		{% endif %}
 				{{ content }}
+				{% if page.layout != "series_content" %}
+					{% include series_remote_bar.html %}
+				{% endif %}
 		{% if page.series != null %}
 			</div>
-		{% endif %}
-		{% if page.layout != "series_content" %}
-			{% include series_remote_bar.html %}
 		{% endif %}
 	</article>
 

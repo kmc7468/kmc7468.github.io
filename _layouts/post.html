@@ -41,10 +41,10 @@ layout: default
 	{% endif %}
 	<article class="content{% if page.series != null and page.layout != "series_content_post" %}-series{% endif %}">
 		{{ content }}
+		{% if page.series != null and page.layout != "series_content_post" %}
+			{% include series_remote_bar.html %}
+		{% endif %}
 	</article>
-	{% if page.layout != "series_content_post" and page.layout != "series_content_post" %}
-		{% include series_remote_bar.html %}
-	{% endif %}
 
 	{% include comment.html %}
 	<hr>
