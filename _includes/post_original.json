@@ -4,18 +4,13 @@
 	"url": "{{ post.url }}",
 	"category": "{{ post.category }}",
 	"category_korean":
-	{% for category in site.categories_korean %}
-		{% capture category_first %}
-			{{ category | first }}
-		{% endcapture %}
-		{% capture post_category %}
-			{{ post.category }}
-		{% endcapture %}
-
-		{% if category_first == post_category %}
-			"{{ category | last }}"
-			{% break %}
-		{% endif %}
+	{% for category_group in site.categories_korean %}
+		{% for category in category_group.first.last %}
+			{% if category.first.first == post.category %}
+				"{{ category.first.last }}"
+				{% break %}
+			{% endif %}
+		{% endfor %}
 	{% endfor %},
 	"tag": [
 	{% for tag in post.tag %}

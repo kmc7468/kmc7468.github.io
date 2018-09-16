@@ -6,12 +6,15 @@ permalink: /categories/index
 
 <html>
 <body>
-	<ul>
-		{% for category in site.categories_korean %}
-			<li><a href="{{ site.baseurl }}/categories/{{ category.first }}">
-				{{ category.last }}
-			</a></li>
-		{% endfor %}
-	</ul>
+	{% for category_group in site.categories_korean %}
+		<h2>{{ category_group | first | first }}</h2>
+		<ul>
+			{% for category in category_group.first.last %}
+				<li><a href="{{ site.baseurl }}/categories/{{ category.first.first }}">
+					{{ category.first.last }}
+				</a></li>
+			{% endfor %}
+		</ul>
+	{% endfor %}
 </body>
 </html>
