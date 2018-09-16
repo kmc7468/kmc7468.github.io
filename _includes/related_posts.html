@@ -4,30 +4,25 @@
 	{% else %}
 		<h2>최근 포스트</h2>
 	{% endif %}
+	{% assign i = 0 %}
 	<ol>
-		{% assign i = 0 %}
 		{% for post in site.posts %}
 			{% if page.category %}
 				{% if page.category == post.category %}
-					<li><a href="{{ post.url }}">{{ post.title }}</a> ({{ post.date | date: "%Y년 %-m월 %-d일" }}){% if post.tag %} - 태그: {% assign i = 0 %}{% for tag in post.tag %}{% if i != 0 %}, {% endif %}{% assign i = i | plus: 1 %}<a href="{{ site.baseurl }}/tags#{{ tag }}">{{ tag }}</a>{% endfor %}</li>
 					{% assign i = i | plus: 1 %}
+					<li><a href="{{ post.url }}">{{ post.title }}</a> ({{ post.date | date: "%Y년 %-m월 %-d일" }}){% if post.tag %} - 태그: {% assign j = 0 %}{% for tag in post.tag %}{% if j != 0 %}, {% endif %}{% assign j = j | plus: 1 %}<a href="{{ site.baseurl }}/tags#{{ tag }}">{{ tag }}</a>{% endfor %}</li>
 				{% endif %}{% endif %}
 			{% else %}
 				<li><a href="{{ post.url }}">{{ post.title }}</a> ({{ post.date | date: "%Y년 %-m월 %-d일" }}) - 카테고리:
-					{% for category in site.categories_korean %}
-						{% capture category_first %}
-							{{ category | first }}
-						{% endcapture %}
-						{% capture post_category %}
-							{{ post.category }}
-						{% endcapture %}
-
-						{% if category_first == post_category %}
-							<a href="{{ site.baseurl }}/categories/{{ category_first }}">{{ category | last }}</a>{% if post.tag %};{% endif %}
-							{% break %}
-						{% endif %}
+					{% for category_group in site.categories_korean %}
+						{% for category in category_group.first.last %}
+							{% if category.first.first == post.category %}
+								<a href="{{ site.baseurl }}/categories/{{ category.first.first }}">{{ category.first.last }}</a>
+								{% break %}
+							{% endif %}
+						{% endfor %}
 					{% endfor %}{% if post.tag %}태그:
-					{% assign i = 0 %}{% for tag in post.tag %}{% if i != 0 %}, {% endif %}{% assign i = i | plus: 1 %}<a href="{{ site.baseurl }}/tags#{{ tag }}">{{ tag }}</a>{% endfor %}
+					{% assign j = 0 %}{% for tag in post.tag %}{% if j != 0 %}, {% endif %}{% assign j = j | plus: 1 %}<a href="{{ site.baseurl }}/tags#{{ tag }}">{{ tag }}</a>{% endfor %}
 					{% endif %}
 				</li>
 				{% assign i = i | plus: 1 %}
@@ -37,4 +32,7 @@
 			{% endif %}
 		{% endfor %}
 	</ol>
+	{% if i == 0 %}
+		<p>포스트가 없습니다.</p>
+	{% endif %}
 </div>
