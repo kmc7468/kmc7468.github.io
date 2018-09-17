@@ -21,17 +21,13 @@ layout: default
 		{{ page.date | date: "%Y년 %-m월 %-d일" }}
 	</h1>
 	<h1 class="page-category">카테고리: <a href="{{ site.baseurl }}/categories/{{ page.category }}">
-		{% for category in site.categories_korean %}
-			{% capture category_first %}
-				{{ category | first }}
-			{% endcapture %}
-			{% capture page_category %}
-				{{ page.category }}
-			{% endcapture %}
-
-			{% if category_first == page_category %}
-				{{ category | last }}
-			{% endif %}
+		{% for category_group in site.categories_korean %}
+			{% for category in category_group.first.last %}
+				{% if category.first.first == page.category %}
+					{{ category.first.last }}
+					{% break %}
+				{% endif %}
+			{% endfor %}
 		{% endfor %}
 	</a></h1>
 	{% if page.tag %}
