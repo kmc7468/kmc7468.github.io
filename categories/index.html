@@ -7,7 +7,7 @@ permalink: /categories/index
 <html>
 <body>
 	{% for category_group in site.categories_korean %}
-		<h2>{{ category_group | first | first }}</h2>
+		<h3>{{ category_group | first | first }}</h3>
 		<ul>
 			{% for category in category_group.first.last %}
 				<li><a href="{{ site.baseurl }}/categories/{{ category.first.first }}">

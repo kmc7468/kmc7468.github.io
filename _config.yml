@@ -27,7 +27,9 @@ categories_korean:
         - all: "전체"
         - notice: "공지사항"
     - "프로그래밍":
-        - cpp: "C++"
+        - cppground: "C++"
+    - "학문":
+        - math: "수학"
 subsites_korean:
     cppground: "C++마당"
 
