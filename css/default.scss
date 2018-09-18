@@ -213,6 +213,10 @@ img {
 	overflow: hidden;
 
 	background-color: $color_white;
+
+	img {
+		cursor: pointer;
+	}
 }
 
 // footer
