@@ -23,18 +23,13 @@ permalink: /tags
 				<li>
 					<a href="{{ page.url }}">{{ page.title }}</a>
 					({{ page.date | date: "%Y년 %-m월 %-d일" }}) - 카테고리:
-					{% for category in site.categories_korean %}
-						{% capture category_first %}
-							{{ category | first }}
-						{% endcapture %}
-						{% capture page_category %}
-							{{ page.category }}
-						{% endcapture %}
-
-						{% if category_first == page_category %}
-							<a href="{{ site.baseurl }}/categories/{{ category_first }}">{{ category | last }}</a>
-							{% break %}
-						{% endif %}
+					{% for category_group in site.categories_korean %}
+						{% for category in category_group.first.last %}
+							{% if category.first.first == page.category %}
+								<a href="{{ site.baseurl }}/categories/{{ category.first.first }}">{{ category.first.last }}</a>
+								{% break %}
+							{% endif %}
+						{% endfor %}
 					{% endfor %}
 				</li>
 				{% endfor %}
