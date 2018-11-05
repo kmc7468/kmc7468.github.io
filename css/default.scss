@@ -4,6 +4,8 @@
 @import "variables";
 @import "highlight";
 
+{% include d2coding.css %}
+
 html {
 	font-size: 100%;
 }
