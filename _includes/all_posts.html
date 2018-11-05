@@ -15,7 +15,7 @@
 				{% for category_group in site.categories_korean %}
 					{% for category in category_group.first.last %}
 						{% if category.first.first == post.category %}
-							<a href="{{ site.baseurl }}/categories/{{ category.first.first }}">{{ category.first.last }}</a>
+							<a href="{{ site.baseurl }}/categories/{{ category.first.first }}">{{ category.first.last }}</a>{% if post.tag != null %};{% endif %}
 							{% break %}
 						{% endif %}
 					{% endfor %}
