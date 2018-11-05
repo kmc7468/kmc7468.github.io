@@ -23,7 +23,7 @@ function filterPages(pages, filters) {
 	for (var i in pages) {
 		var page = pages[i];
 		for (var j in filters) {
-			var filter = filters[j];
+			var filter = filters[j].toLowerCase();
 			var cur_page = null;
 
 			if (page.title.toLowerCase().includes(filter)) {
@@ -94,7 +94,7 @@ function replaceAll(str, from, to) {
 
 window.addEventListener("load", function() {
 	var filters = [];
-	var query_original = getParam("query").toLowerCase();
+	var query_original = getParam("query");
 	var query = query_original.trim();
 	if (query == null || query == "") {
 		noResultsPage("");
