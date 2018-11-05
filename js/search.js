@@ -26,10 +26,10 @@ function filterPages(pages, filters) {
 			var filter = filters[j];
 			var cur_page = null;
 
-			if (page.title.includes(filter)) {
+			if (page.title.toLowerCase().includes(filter)) {
 				cur_page = page;
 			} else if (page.series && page.series_has_subtitle &&
-					   page.series_subtitle.includes(filter)) {
+					   page.series_subtitle.toLowerCase().includes(filter)) {
 				cur_page = page;
 			}
 
@@ -94,7 +94,7 @@ function replaceAll(str, from, to) {
 
 window.addEventListener("load", function() {
 	var filters = [];
-	var query_original = getParam("query");
+	var query_original = getParam("query").toLowerCase();
 	var query = query_original.trim();
 	if (query == null || query == "") {
 		noResultsPage("");
