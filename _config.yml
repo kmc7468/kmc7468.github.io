@@ -26,6 +26,7 @@ categories_korean:
     - "일반":
         - all: "전체"
         - notice: "공지사항"
+        - retrospect: "회고"
     - "프로그래밍":
         - cppground: "C++"
     - "학문":
