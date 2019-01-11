@@ -29,8 +29,7 @@ categories_korean:
         - retrospect: "회고"
     - "프로그래밍":
         - cppground: "C++"
-    - "학문":
-        - math: "수학"
+        - ml: "머신러닝"
 subsites_korean:
     cppground: "C++마당"
 
