@@ -90,6 +90,17 @@ img {
 	height: auto;
 }
 
+.mjx-chtml {
+	font-size: 110% !important;
+
+	.mjx-full-width {
+		font-size: 122% !important;
+	}
+}
+.footnotes ol li p {
+	margin: 0px;
+}
+
 // header
 .header {
 	border-bottom: 1px solid $color_black;
